@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cloudnesnginxdemos 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudnesnginxdemos
+  template:
+    metadata:
+      labels:
+        app: cloudnesnginxdemos 
+    spec:
+      containers:
+        - name: cloudnesnginxdemos 
+          image: saulcajero.azurecr.io/cloudnesnginxdemos
+          ports:
+          - containerPort: 80
